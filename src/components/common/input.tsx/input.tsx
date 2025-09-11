@@ -1,19 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
-
-export interface InputProps {
-  type?: React.HTMLInputTypeAttribute;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  placeholder?: string;
-  label?: string;
-  errorMessage?: string;
-  className?: string;
-  size?: "xs" | "sm" | "md" | "lg";
-  description?: string;
-  showPasswordToggle?: boolean;
-  isError?: boolean;
-}
+import { InputProps } from "@/types/common/input";
 
 export const Input = ({
   type = "text",

@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface InputProps {
   type?: React.HTMLInputTypeAttribute;
   value: string;
@@ -6,4 +8,8 @@ export interface InputProps {
   label?: string;
   errorMessage?: string;
   className?: string;
+  size?: "xs" | "sm" | "md" | "lg";
+  description?: string;
+  showPasswordToggle?: boolean;
+  isError?: boolean;
 }
