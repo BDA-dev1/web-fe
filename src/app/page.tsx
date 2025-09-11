@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Input } from "@/components/common/input.tsx/input";
 
 export default function Home() {
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
 
@@ -10,7 +11,15 @@ export default function Home() {
     <>
       <div className="w-full h-full flex flex-col justify-start items-center py-10">
         <div className="text-5xl font-bold text-blue-900 ">Test for BDA</div>
-        <div className="flex flex-col w-fit h-fit gap-4">
+        <div className="flex flex-col w-fit h-fit gap-10">
+          <Input
+            label="이름"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="이름을 입력해주세요."
+            size="lg"
+          />
           <Input
             label="비밀번호"
             type="password"
