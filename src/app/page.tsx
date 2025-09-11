@@ -11,7 +11,7 @@ export default function Home() {
   const [birth, setBirth] = useState({ year: "", month: "", day: "" });
   const [phone, setPhone] = useState("");
   const [code, setCode] = useState("");
-  const [timeLeft, setTimeLeft] = useState("03:00");
+  const [timeLeft] = useState("03:00");
 
   const validateEmail = (email: string) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
