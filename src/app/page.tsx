@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import { Input } from "@/components/common/input.tsx/input";
-import { BirthDatePicker } from "@/components/common/input.tsx/BirthDatePicker";
+import { Input } from "@/components/common/input/Input";
+import { BirthDatePicker } from "@/components/common/input/BirthDatePicker";
 
 export default function Home() {
   const [name, setName] = useState("");
@@ -48,7 +48,7 @@ export default function Home() {
             errorMessage={email === "" ? "" : !validateEmail(email) ? "이메일 형식이 올바르지 않아요." : ""}
           />
           <div className="relative">
-            <Input label="인증번호" type="text" value={code} onChange={(e) => setCode(e.target.value)} size="lg" />
+            <Input type="text" value={code} onChange={(e) => setCode(e.target.value)} size="lg" />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">{timeLeft}</span>
           </div>
           <Input
