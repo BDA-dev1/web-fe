@@ -9,6 +9,7 @@ export default function Home() {
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
   const [birth, setBirth] = useState({ year: "", month: "", day: "" });
+  const [phone, setPhone] = useState("");
 
   const validateEmail = (email: string) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -69,6 +70,17 @@ export default function Home() {
                 : "비밀번호가 일치해요."
             }
             showPasswordToggle
+          />
+          <Input
+            label="휴대전화"
+            type="tel"
+            value={phone}
+            onChange={(e) => {
+              const onlyNums = e.target.value.replace(/[^0-9]/g, "");
+              setPhone(onlyNums);
+            }}
+            placeholder="‘-’ 없이 숫자만 입력"
+            size="lg"
           />
         </div>
       </div>
