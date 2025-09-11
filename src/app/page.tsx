@@ -10,6 +10,8 @@ export default function Home() {
   const [passwordConfirm, setPasswordConfirm] = useState("");
   const [birth, setBirth] = useState({ year: "", month: "", day: "" });
   const [phone, setPhone] = useState("");
+  const [code, setCode] = useState("");
+  const [timeLeft, setTimeLeft] = useState("03:00");
 
   const validateEmail = (email: string) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -45,6 +47,10 @@ export default function Home() {
             isError={email !== "" && !validateEmail(email)}
             errorMessage={email === "" ? "" : !validateEmail(email) ? "이메일 형식이 올바르지 않아요." : ""}
           />
+          <div className="relative">
+            <Input label="인증번호" type="text" value={code} onChange={(e) => setCode(e.target.value)} size="lg" />
+            <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">{timeLeft}</span>
+          </div>
           <Input
             label="비밀번호"
             type="password"
