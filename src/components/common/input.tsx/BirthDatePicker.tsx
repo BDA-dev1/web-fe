@@ -1,12 +1,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
-
-interface BirthDatePickerProps {
-  year: string;
-  month: string;
-  day: string;
-  onChange: (value: { year: string; month: string; day: string }) => void;
-}
+import { BirthDatePickerProps } from "@/types/common/BirthdatePicker";
 
 export const BirthDatePicker = ({ year, month, day, onChange }: BirthDatePickerProps) => {
   const [daysInMonth, setDaysInMonth] = useState<number[]>([]);
