@@ -28,6 +28,12 @@ export default function Home() {
             placeholder="이름을 입력해주세요."
             size="lg"
           />
+          <BirthDatePicker
+            year={birth.year}
+            month={birth.month}
+            day={birth.day}
+            onChange={(value) => setBirth(value)}
+          />
           <Input
             label="이메일 인증"
             type="email"
@@ -65,7 +71,6 @@ export default function Home() {
             showPasswordToggle
           />
         </div>
-        <BirthDatePicker year={birth.year} month={birth.month} day={birth.day} onChange={(value) => setBirth(value)} />
       </div>
     </>
   );
