@@ -49,7 +49,7 @@ export const Input = ({
           className={[
             "appearance-none",
             sizes[size ?? "md"],
-            "text-lg font-semibold border-[3px] rounded-xl border-[#D1D1D1] px-4 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-[#D1D1D1]",
+            "text-lg font-semibold border-[3px] rounded-xl border-[#D1D1D1] tracking-wide px-4 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-[#D1D1D1]",
             className,
           ]
             .filter(Boolean)
