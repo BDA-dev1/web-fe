@@ -13,13 +13,13 @@ export const BirthDatePicker = ({ year, month, day, onChange }: BirthDatePickerP
 
   // month/year가 변할 때마다 일 수 갱신
   useEffect(() => {
-    if (year && month) {
-      const lastDay = new Date(Number(year), Number(month), 0).getDate();
-      setDaysInMonth(Array.from({ length: lastDay }, (_, i) => i + 1));
-    } else {
-      setDaysInMonth(Array.from({ length: 31 }, (_, i) => i + 1));
+    const lastDay = year && month ? new Date(Number(year), Number(month), 0).getDate() : 31;
+    setDaysInMonth(Array.from({ length: lastDay }, (_, i) => i + 1));
+
+    if (day && Number(day) > lastDay) {
+      onChange({ year, month, day: "" });
     }
-  }, [year, month]);
+  }, [year, month, day, onChange]);
 
   return (
     <div className="flex flex-col">
