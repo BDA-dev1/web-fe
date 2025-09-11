@@ -1,12 +1,14 @@
 "use client";
 import { useState } from "react";
 import { Input } from "@/components/common/input.tsx/input";
+import { BirthDatePicker } from "@/components/common/input.tsx/BirthDatePicker";
 
 export default function Home() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
+  const [birth, setBirth] = useState({ year: "", month: "", day: "" });
 
   const validateEmail = (email: string) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -63,6 +65,7 @@ export default function Home() {
             showPasswordToggle
           />
         </div>
+        <BirthDatePicker year={birth.year} month={birth.month} day={birth.day} onChange={(value) => setBirth(value)} />
       </div>
     </>
   );
