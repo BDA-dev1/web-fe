@@ -59,9 +59,9 @@ export const Input = ({
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 focus:outline-none"
           >
             {isVisible ? (
-              <Image src={"/components/input/pw_show.png"} width={20} height={20} alt="" />
+              <Image src={"/components/input/pw_show.png"} width={20} height={20} alt="비밀번호 보기" />
             ) : (
-              <Image src={"/components/input/pw_hide.png"} width={20} height={20} alt="" />
+              <Image src={"/components/input/pw_hide.png"} width={20} height={20} alt="비밀번호 숨기기" />
             )}
           </button>
         )}
