@@ -27,7 +27,7 @@ export const BirthDatePicker = ({ year, month, day, onChange }: BirthDatePickerP
             className="h-[60px] w-[150px] border-[3px] border-[#D1D1D1] rounded-xl pl-10 pr-10 text-lg font-semibold appearance-none"
           >
             <option value="">년</option>
-            {Array.from({ length: 100 }, (_, i) => 2025 - i).map((y) => (
+            {Array.from({ length: 100 }, (_, i) => new Date().getFullYear() + 1 - i).map((y) => (
               <option key={y} value={y}>
                 {y}
               </option>
