@@ -8,7 +8,7 @@ export interface InputProps {
   label?: string;
   errorMessage?: string;
   className?: string;
-  size?: "xs" | "sm" | "md" | "lg";
+  size?: "md" | "lg";
   description?: string;
   showPasswordToggle?: boolean;
   isError?: boolean;

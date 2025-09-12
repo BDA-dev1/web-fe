@@ -19,8 +19,6 @@ export const Input = ({
   const inputType = showPasswordToggle ? (isVisible ? "text" : "password") : type;
 
   const sizes: Record<NonNullable<InputProps["size"]>, string> = {
-    xs: "h-[60px] w-[115px]",
-    sm: "h-[60px] w-[161px]",
     md: "h-[60px] w-[285px]",
     lg: "h-[60px] w-[400px]",
   };
