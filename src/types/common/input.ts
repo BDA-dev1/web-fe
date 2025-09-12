@@ -12,4 +12,5 @@ export interface InputProps {
   description?: string;
   showPasswordToggle?: boolean;
   isError?: boolean;
+  variant?: "default" | "login";
 }

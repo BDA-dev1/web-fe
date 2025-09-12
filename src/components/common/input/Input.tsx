@@ -14,7 +14,8 @@ export const Input = ({
   description,
   showPasswordToggle,
   isError,
-}: InputProps) => {
+  variant,
+}: InputProps & { variant?: "default" | "login" }) => {
   const [isVisible, setIsVisible] = useState(false);
   const inputType = showPasswordToggle ? (isVisible ? "text" : "password") : type;
 
@@ -22,6 +23,12 @@ export const Input = ({
     md: "h-[60px] w-[285px]",
     lg: "h-[60px] w-[400px]",
   };
+
+  const variantStyles: Record<"default" | "login", string> = {
+    default: "text-lg font-semibold rounded-xl px-4 py-2 pr-10",
+    login: "w-[360px] text-lg font-bold rounded-full px-6 border-[#5353E0]",
+  };
+
   return (
     <div className={`flex flex-col ${className ?? ""}`}>
       {label && <label className="mb-1 ml-1 text-lg font-bold text-[#656565]">{label}</label>}
@@ -34,10 +41,12 @@ export const Input = ({
           className={[
             "appearance-none",
             sizes[size ?? "md"],
-            "text-lg font-semibold rounded-xl px-4 py-2 pr-10 focus:outline-none",
-            isError
-              ? "border-[3px] border-[#E8604B] focus:ring-2 focus:ring-[#E8604B]"
-              : "border-[3px] border-[#D1D1D1] focus:ring-2 focus:ring-blue-500",
+            variantStyles[variant ?? "default"],
+            variant === "login"
+              ? "border-[#5353E0] border-[3px]"
+              : isError
+              ? "border-[#E8604B] border-[3px] focus:ring-2 focus:ring-[#E8604B]"
+              : "border-[#D1D1D1] border-[3px] focus:ring-2 focus:ring-blue-500",
             className,
           ]
             .filter(Boolean)

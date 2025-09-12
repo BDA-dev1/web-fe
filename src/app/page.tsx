@@ -13,6 +13,9 @@ export default function Home() {
   const [code, setCode] = useState("");
   const [timeLeft] = useState("03:00");
 
+  const [id, setId] = useState("");
+  const [nickname, setNickname] = useState("");
+
   const validateEmail = (email: string) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
@@ -46,6 +49,7 @@ export default function Home() {
             size="lg"
             isError={email !== "" && !validateEmail(email)}
             errorMessage={email === "" ? "" : !validateEmail(email) ? "이메일 형식이 올바르지 않아요." : ""}
+            variant="default"
           />
           <div className="relative">
             <Input type="text" value={code} onChange={(e) => setCode(e.target.value)} size="lg" />
@@ -87,6 +91,23 @@ export default function Home() {
             }}
             placeholder="‘-’ 없이 숫자만 입력"
             size="lg"
+          />
+          <Input
+            label="아이디"
+            type="text"
+            value={id}
+            onChange={(e) => setId(e.target.value)}
+            placeholder="아이디 입력"
+            variant="login"
+          />
+
+          <Input
+            label="비밀번호"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="비밀번호 입력"
+            variant="login"
           />
         </div>
       </div>
